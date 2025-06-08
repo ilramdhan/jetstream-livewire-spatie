@@ -2,6 +2,7 @@
 
 use App\Livewire\Post\Post;
 use App\Livewire\RolePermission\RolePermissionManager;
+use App\Livewire\Tenant\CreateTenant;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,6 +18,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/post', Post::class)->name('post');
+//    Route::get('/post', Post::class)->name('post');
     Route::get('/roles-permissions', RolePermissionManager::class)->name('roles.permissions.manager');
+    Route::get('/create-team', CreateTenant::class)->name('tenant.create');
 });
